@@ -1359,7 +1359,10 @@ int candidateSentToServer=0;
           Log.d(TAG, "Set local SDP from " + sdp.type);
           peerConnection.setLocalDescription(sdpObserver, sdp);
 
-          JSONObject json = new JSONObject();
+
+          // Below code is cussed while while not initiator
+
+        /*  JSONObject json = new JSONObject();
           try {
             json.put( "sdp", sdp.description);
             json.put( "roomId", "amit");
@@ -1369,7 +1372,7 @@ int candidateSentToServer=0;
 
           } catch (JSONException e) {
             e.printStackTrace();
-          }
+          }*/
         }
       });
     }

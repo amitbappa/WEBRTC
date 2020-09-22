@@ -863,7 +863,7 @@ public class CallActivity extends Activity implements AppRTCClient.SignalingEven
         }
         logAndToast("Received remote " + sdp.type + ", delay=" + delta + "ms");
         peerConnectionClient.setRemoteDescription(sdp);
-        if (true) {
+        if (!signalingParameters.initiator) {
           logAndToast("Creating ANSWER...");
           // Create answer. Answer SDP will be sent to offering client in
           // PeerConnectionEvents.onLocalDescription event.
